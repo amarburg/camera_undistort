@@ -13,7 +13,7 @@ default: $(APP)
 
 
 test: $(APP)
-	./$(APP) --verbose --xml data/better_coverage.xml data/G0022591.JPG
+	./$(APP) --verbose --xml sample/better_coverage.xml sample/G0022591.JPG
 
 $(APP): $(SRCS:.cpp=.o)
 	$(CXX) $(LDFLAGS) $(CFLAGS) -o $@ $< $(LIBS)
