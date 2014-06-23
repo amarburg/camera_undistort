@@ -10,6 +10,8 @@
 using namespace std;
 
 #include <opencv2/core.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 using namespace cv;
 
 #include "rapidxml-1.13/rapidxml.hpp"
@@ -18,6 +20,7 @@ using namespace rapidxml;
 // Quick and dirty
 
 bool verbose = false;
+double expand = 1.5;
 string xml_file, image_file, output_file;
 
 static void parse_args( int argc, char **argv )
@@ -27,15 +30,19 @@ static void parse_args( int argc, char **argv )
     {"verbose", 0,0,'v'},
     {"xml", 1, 0, 'x'},
     {"output", 1, 0, 'o'},
+    {"expand", 1, 0, 'e'},
     {"help", 0, 0, 'h'},
     {NULL, 0, NULL, 0}
   };
 
   int option_index = 0;
-  while( (c=getopt_long( argc, argv, "x:vh", 
+  while( (c=getopt_long( argc, argv, "x:e:vh", 
           long_options, &option_index)) != -1 ) {
     int this_option_optind = optind ? optind : 1;
     switch( c ) {
+      case 'e':
+        expand = atof( optarg );
+        break;
       case 'x':
         xml_file = optarg;
         break;
@@ -46,7 +53,7 @@ static void parse_args( int argc, char **argv )
         output_file = optarg;
         break;
       case 'h':
-        cout << "undistort --xml xml_file [--output output_file] image_file" << endl;
+        cout << "undistort --xml xml_file [--output output_file] [--expand factor] image_file" << endl;
         exit(0);
       default:
         cout << "Getopt returned illegal character" << endl;
@@ -95,6 +102,13 @@ static char *read_xml( const string &xmlfile )
 struct CalibrationResult {
   CalibrationResult( double _fx, double _fy, double _px, double _py, double _d1, double _d2, double _d3, double _d4 )
     : fx(_fx), fy(_fy), px(_px), py(_py), d1(_d1), d2(_d2), d3(_d3), d4(_d4) {;}
+
+  Mat cam( double pp_scale = 1.0 )
+  { Mat cam =(Mat_<double>(3,3) << fx, 0, px*pp_scale, 0, fy, py*pp_scale, 0, 0, 1); 
+  return cam;}
+
+  Mat dist( void )
+  { return (Mat_<double>(1,4) << d1, d2, d3, d4); }
 
   double fx, fy, px, py, d1, d2, d3, d4;
 };
@@ -149,4 +163,23 @@ int main( int argc, char **argv )
     cout << "Principal point (x,y) " << cal.px << "," << cal.py << endl;
     cout << "Distortion params " << cal.d1 << "," << cal.d2 << "," << cal.d3 << "," << cal.d4 << endl;
   }
+
+
+  Mat in = imread( image_file );
+  if( in.data == NULL ) {
+    cout << "Unable to read the input file " << image_file << endl;
+    exit(-1);
+  }
+
+
+  Mat working = Mat::zeros( in.rows * expand, in.cols * expand, in.type() );
+  Mat working_roi( working, Rect( in.cols*(expand-1.0)/2.0, in.rows*(expand-1.0)/2.0, in.cols, in.rows ) );
+  in.copyTo( working_roi );
+
+  Mat out( working.size(), working.type() );
+  undistort( working, out, cal.cam(expand), cal.dist() ); 
+
+  imwrite( output_file, out );
+
+  return 0;
 }
