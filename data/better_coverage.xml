@@ -1,0 +1,311 @@
+<?xml version="1.0" standalone="yes"?>
+<CalibrationProject>
+  <xs:schema id="CalibrationProject" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="CalibrationProject" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ObjWidth" type="xs:int" minOccurs="0" />
+                <xs:element name="ObjHeight" type="xs:int" minOccurs="0" />
+                <xs:element name="FieldSize" type="xs:double" minOccurs="0" />
+                <xs:element name="DetectionMethod" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="images">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ImagePath" type="xs:string" minOccurs="0" />
+                <xs:element name="SourceType" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="results">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ImageCount" type="xs:int" minOccurs="0" />
+                <xs:element name="focus_lenX" type="xs:double" minOccurs="0" />
+                <xs:element name="focus_lenY" type="xs:double" minOccurs="0" />
+                <xs:element name="PrincipalX" type="xs:double" minOccurs="0" />
+                <xs:element name="PrincipalY" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist1" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist2" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist3" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist4" type="xs:double" minOccurs="0" />
+                <xs:element name="focus_lenX_er" type="xs:double" minOccurs="0" />
+                <xs:element name="focus_lenY_er" type="xs:double" minOccurs="0" />
+                <xs:element name="PrincipalX_er" type="xs:double" minOccurs="0" />
+                <xs:element name="PrincipalY_er" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist1_er" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist2_er" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist3_er" type="xs:double" minOccurs="0" />
+                <xs:element name="Dist4_er" type="xs:double" minOccurs="0" />
+                <xs:element name="dc_AllImage_errX" type="xs:double" minOccurs="0" />
+                <xs:element name="dc_AllImage_errY" type="xs:double" minOccurs="0" />
+                <xs:element name="Calib_Date" type="xs:string" minOccurs="0" />
+                <xs:element name="Calib_Type" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <data>
+    <ObjWidth>5</ObjWidth>
+    <ObjHeight>6</ObjHeight>
+    <FieldSize>29</FieldSize>
+    <DetectionMethod>3</DetectionMethod>
+  </data>
+  <data>
+    <ObjWidth>7</ObjWidth>
+    <ObjHeight>10</ObjHeight>
+    <FieldSize>21.5</FieldSize>
+    <DetectionMethod>3</DetectionMethod>
+  </data>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6954.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6955.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6956.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6957.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6958.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6959.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6960.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6961.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6962.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6963.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6964.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6965.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6966.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6967.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6968.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6969.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6970.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6973.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6974.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6975.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6976.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6977.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6978.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6979.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6980.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6981.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6982.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6983.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6984.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6985.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6987.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6988.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6989.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6990.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6993.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6994.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6995.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6996.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6997.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6998.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR6999.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7000.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7001.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7002.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7003.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7004.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7005.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7006.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7007.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7008.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7009.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7010.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7011.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7012.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <images>
+    <ImagePath>H:\Projects\Flights\Camera Calibration\GoPro Hero Black Camera cal\GoPro camera cal\GOPR7013.JPG</ImagePath>
+    <SourceType>0</SourceType>
+  </images>
+  <results>
+    <ImageCount>55</ImageCount>
+    <focus_lenX>1789.987745777602</focus_lenX>
+    <focus_lenY>1811.2655616766015</focus_lenY>
+    <PrincipalX>2012.7835966962634</PrincipalX>
+    <PrincipalY>1509.81618794889</PrincipalY>
+    <Dist1>-0.18548026513384971</Dist1>
+    <Dist2>0.02452750534577456</Dist2>
+    <Dist3>-0.00043497000682752928</Dist3>
+    <Dist4>0.00020446158823213652</Dist4>
+    <focus_lenX_er>3.3676886558532715</focus_lenX_er>
+    <focus_lenY_er>3.4943766593933105</focus_lenY_er>
+    <PrincipalX_er>2.3686425685882568</PrincipalX_er>
+    <PrincipalY_er>2.5695276260375977</PrincipalY_er>
+    <Dist1_er>0.0011719877365976572</Dist1_er>
+    <Dist2_er>0.0007742646848782897</Dist2_er>
+    <Dist3_er>0.00013010365364607424</Dist3_er>
+    <Dist4_er>0.00011762924987124279</Dist4_er>
+    <dc_AllImage_errX>9.0577202702547677</dc_AllImage_errX>
+    <dc_AllImage_errY>6.8625246834168463</dc_AllImage_errY>
+    <Calib_Date>10/05/2014 3:54:43 p.m.</Calib_Date>
+    <Calib_Type>2</Calib_Type>
+  </results>
+</CalibrationProject>
