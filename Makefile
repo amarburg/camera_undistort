@@ -6,14 +6,14 @@ SRCS = src/undistort.cpp
 CFLAGS = -ggdb
 LDFLAGS = 
 
-LIBS = -lopencv_core -lopencv_imgproc -lopencv_highgui
+LIBS = -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_calib3d
 
 
 default: $(APP)
 
 
 test: $(APP)
-	./$(APP) --verbose --expand 2 --xml data/better_coverage.xml data/G0022591.JPG
+	./$(APP) --verbose --xml data/better_coverage.xml data/G0022591.JPG
 
 $(APP): $(SRCS:.cpp=.o)
 	$(CXX) $(LDFLAGS) $(CFLAGS) -o $@ $< $(LIBS)

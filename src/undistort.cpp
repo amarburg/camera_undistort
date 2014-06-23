@@ -12,6 +12,7 @@ using namespace std;
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
+#include <opencv2/calib3d.hpp>
 using namespace cv;
 
 #include "rapidxml-1.13/rapidxml.hpp"
@@ -20,7 +21,7 @@ using namespace rapidxml;
 // Quick and dirty
 
 bool verbose = false;
-double expand = 1.5;
+double alpha = 1.0;
 string xml_file, image_file, output_file;
 
 static void parse_args( int argc, char **argv )
@@ -30,18 +31,18 @@ static void parse_args( int argc, char **argv )
     {"verbose", 0,0,'v'},
     {"xml", 1, 0, 'x'},
     {"output", 1, 0, 'o'},
-    {"expand", 1, 0, 'e'},
+    {"alpha", 1, 0, 'a'},
     {"help", 0, 0, 'h'},
     {NULL, 0, NULL, 0}
   };
 
   int option_index = 0;
-  while( (c=getopt_long( argc, argv, "x:e:vh", 
+  while( (c=getopt_long( argc, argv, "x:a:vh", 
           long_options, &option_index)) != -1 ) {
     int this_option_optind = optind ? optind : 1;
     switch( c ) {
-      case 'e':
-        expand = atof( optarg );
+      case 'a':
+        alpha = atof( optarg );
         break;
       case 'x':
         xml_file = optarg;
@@ -63,6 +64,11 @@ static void parse_args( int argc, char **argv )
   if( optind >= argc ) {
     cout << "Need to specify image file on command line" << endl;
     exit(0);
+  }
+
+  if( alpha < 0 || alpha > 1.0 ) {
+    cout << "alpha not valid" << endl;
+    exit(-1);
   }
 
   image_file = argv[optind];
@@ -171,13 +177,15 @@ int main( int argc, char **argv )
     exit(-1);
   }
 
+  Mat new_cam = getOptimalNewCameraMatrix( cal.cam(), cal.dist(), in.size(), alpha );
+  Mat out( in.size(), in.type() );
+  undistort( in, out, cal.cam(), cal.dist(), new_cam );
 
-  Mat working = Mat::zeros( in.rows * expand, in.cols * expand, in.type() );
-  Mat working_roi( working, Rect( in.cols*(expand-1.0)/2.0, in.rows*(expand-1.0)/2.0, in.cols, in.rows ) );
-  in.copyTo( working_roi );
-
-  Mat out( working.size(), working.type() );
-  undistort( working, out, cal.cam(expand), cal.dist() ); 
+  //Mat working = Mat::zeros( in.rows * expand, in.cols * expand, in.type() );
+  //Mat working_roi( working, Rect( in.cols*(expand-1.0)/2.0, in.rows*(expand-1.0)/2.0, in.cols, in.rows ) );
+  //in.copyTo( working_roi );
+  //Mat out( working.size(), working.type() );
+  //undistort( working, out, cal.cam(expand), cal.dist() ); 
 
   imwrite( output_file, out );
 
